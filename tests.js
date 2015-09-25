@@ -205,6 +205,7 @@ exports.addNumberMultipleTest = function(test){
     test.done();
 };
 
+
 exports.addMixedTest = function(test){
     var addMixedTestModel = new MyModel();
     var connection = {con: "connection"};
