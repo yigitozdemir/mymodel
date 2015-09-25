@@ -1,0 +1,36 @@
+{
+  "name": "mymodel",
+  "description": "A MySql model structure for nodejs",
+  "version": "0.1.1",
+  "license": "MIT",
+  "author": {
+    "name": "Yiğit Özdemir",
+    "email": "yigit@yigitnot.com",
+    "url": "http://yigitnot.com/"
+  },
+  "contributors": [],
+  "homepage": "https://github.com/yigitozdemir/mymodel.git",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yigitozdemir/mymodel.git"
+  },
+  "dependencies": {},
+  "devDependencies": {},
+  "files": [
+    "index.js"
+  ],
+  "engines": {
+    "node": ">= 0.6"
+  },
+  "scripts": {},
+  "directories": {},
+  "readme": "# MyModel is Mysql Models for NodeJs\n\n## Usage\n\n### Selection\n    var mysql = require('mysql');\n    var model = new MyModel();    \n    model.extend(connection, \"movies\"); //mysql connection and table name\n    model.findOne(\"name\", \"id\", \"julien\"); //which columns will be selected\n    model.where(\"id = 3\", \"OR\"); //first criteria\n    model.where(\"name = 'slience'\"); //second criteria\n    model.execute(function(err, rows, field){\n        console.log(rows);\n    });\n\n### Insertation\n\n    var insertmodel = new MyModel();\n    insertmodel.extend(connection, \"movies\");\n    insertmodel.setProperty(\"name\", \"yigit\"); //property with column name to insert\n    insertmodel.setProperty(\"password\", 123456); //property with column name to insert\n    insertmodel.save();\n    insertmodel.execute(function(err, rows, fields){\n        if(!err){\n            console.log(\"inserted\");\n        }\n    });\n\n\n\n## Running test\nRunning unit tests is easy as:\n\n    nodeunit test.js\n\n\n### TODO\n\n* Multiple Selection Feature\n* Update\n* Relations\n",
+  "readmeFilename": "README.md",
+  "gitHead": "856d8903b240bb549ed678e5117eb304b74373cb",
+  "bugs": {
+    "url": "https://github.com/yigitozdemir/mymodel/issues"
+  },
+  "_id": "mymodel@0.0.8",
+  "_shasum": "9baccd38d30ca1e385ba29744f44b3b12eaa66d0",
+  "_from": "mymodel@>=0.0.1 <0.1.0"
+}
