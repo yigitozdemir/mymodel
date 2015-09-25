@@ -145,7 +145,7 @@ MyModel.prototype.setProperty = function(propertyKey, propertyValue){
 };
 
 MyModel.prototype.addString = function(propertyKey, propertyValue){
-    if (typeof myVar === 'string' || myVar instanceof String){
+    if (typeof myVar === 'string' || myVar instanceof String || typeof myVar == 'string'){
         this.properties[propertyKey] = propertyValue;
     }
     return this;
