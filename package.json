@@ -1,7 +1,7 @@
 {
   "name": "mymodel",
   "description": "A MySql model structure for nodejs",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "license": "MIT",
   "author": {
     "name": "Yiğit Özdemir",

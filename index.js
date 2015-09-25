@@ -68,7 +68,7 @@ MyModel.prototype.where = function() {
  */
 MyModel.prototype.orderBy = function(columnName){
     var query = this.activeQuery;
-    query += "ORDER BY " + columnName + " ";
+    query += "ORDER BY '" + columnName + "' ";
     this.activeQuery = query;
     return this;
 };
@@ -139,10 +139,6 @@ MyModel.prototype.buildInsertQuery = function(columnNames, columnValues){
     this.activeQuery = query;
 };
 
-MyModel.prototype.setProperty = function(propertyKey, propertyValue){
-    this.properties[propertyKey] = propertyValue;
-    return this;
-};
 
 MyModel.prototype.addString = function(propertyKey, propertyValue){
     this.properties[propertyKey] = "'" + propertyValue.toString() + "'";
@@ -150,7 +146,7 @@ MyModel.prototype.addString = function(propertyKey, propertyValue){
 };
 
 MyModel.prototype.addNumber = function(propertyKey, propertyValue){
-    if(!isNaN(parseFloat(n)) && isFinite(n)){
+    if(!isNaN(parseFloat(propertyValue)) && isFinite(propertyValue)){
         this.properties[propertyKey] = propertyValue;
     }
     return this;
